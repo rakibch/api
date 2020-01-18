@@ -13,3 +13,11 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 });
+
+Route::group([
+    'prefix' => 'product'
+], function () {
+  Route::apiResource('/review','ReviewController');
+});
+
+Route::apiResource('/products','ProductController');
